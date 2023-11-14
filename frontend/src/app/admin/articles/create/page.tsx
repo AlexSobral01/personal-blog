@@ -11,8 +11,7 @@ export default function CreateArticle() {
   const [description, setDescription] = useState('');
 
 
-  const handleArticle = async(e: FormEvent) => {
-    e.preventDefault()
+  const handleArticle = async() => {
     await axios.post('http://localhost:3001/articles', {imgUrl, title, description})
   }
 
