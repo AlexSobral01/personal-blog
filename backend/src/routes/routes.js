@@ -3,6 +3,7 @@ const router = express.Router();
 
 const ArticleController = require('../controllers/articles/ArticlesController');
 
-router.get('/artigos', ArticleController.index);
+router.get('/articles', ArticleController.findAll);
+router.post('/articles', ArticleController.create)
 
 module.exports = router;
