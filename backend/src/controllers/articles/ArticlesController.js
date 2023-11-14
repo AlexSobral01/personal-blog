@@ -1,8 +1,9 @@
-const express = require('express');
-const router = express.Router();
+class ArticleController {
 
-router.get('/articles', (req, res) => {
-  res.send('artigos')
-})
+  async index (req, res) {
+    res.send('artigos')
+  }
+  
+}
 
-module.exports = router;
+module.exports = new ArticleController;
