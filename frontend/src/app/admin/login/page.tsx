@@ -35,7 +35,7 @@ export default function FormLogin() {
     <main>
       <form className="h-full mt-20 flex flex-col items-center justify-center" onSubmit={handleLogin}>
         <h1 className="font-bold text-2xl p-4">Login Admin</h1>
-        <div className="flex flex-col gap-2 items-center w-4/6 max-w-lg">
+        <div className="flex flex-col gap-2 items-center text-black w-4/6 max-w-lg">
           <input 
             type="email"
             placeholder="E-mail" 

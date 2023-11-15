@@ -5,7 +5,8 @@ interface Article {
   id: number,
   imgUrl: string,
   title: string,
-  description: string
+  description: string,
+  slug: string
 }
 
 const getArticle = async() => {
@@ -22,7 +23,7 @@ export default async function Articles() {
   return (
     <main className="grid md:grid-cols-2 mx-6 md:mx-60 mt-10 gap-4">
       {articles.map((article:Article) => (
-        <ArticlesCards key={article.id} src={article.imgUrl} alt={article.title} title={article.title} paragraph={article.description}  />
+        <ArticlesCards key={article.id} src={article.imgUrl} alt={article.title} title={article.title} paragraph={article.description} slug={'/articles/' + article.slug}  />
       ))}
     </main>
   )
