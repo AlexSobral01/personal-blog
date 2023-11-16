@@ -8,6 +8,21 @@ class ArticleController {
       res.send(artigos)
   }
 
+  async findDesc (req, res) {
+    try {
+      await Article.findAll({
+        order: [
+          ['id', 'DESC']
+        ],
+        limit: 4
+      }).then((result) => {
+        return res.send(result)
+      })
+    } catch (error) {
+      res.status(400).send({ error: 'falha na busca' })
+    }
+  }
+
   async create (req, res) {
     const { imgUrl, title, description } = req.body;
 

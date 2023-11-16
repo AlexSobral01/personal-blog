@@ -18,7 +18,7 @@ export default function ArticlesCards({ src, alt, title, paragraph, slug }: Arti
           className="h-60 rounded-xl my-2 mx-auto"
           />
           <h2 className="font-semibold text-2xl text-center my-2">{title}</h2>
-          <p className="mx-auto w-96 overflow-hidden text-ellipsis whitespace-nowrap">{paragraph}</p>
+          <p className="mx-auto text-center w-96 overflow-hidden text-ellipsis whitespace-nowrap">{paragraph}</p>
         </article>
       </Link>
   )

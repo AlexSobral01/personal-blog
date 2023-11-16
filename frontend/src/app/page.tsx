@@ -1,7 +1,33 @@
+'use client'
+
 import ArticlesCards from "@/components/ArticlesCards";
+import axios from "axios";
 import Image from "next/image";
+import { useEffect, useState } from "react";
+
+interface ArticleProp {
+  id: number,
+  imgUrl: string,
+  title: string,
+  description: string,
+  slug: string
+}
 
 export default function Home() {
+  const [recentArticle, setRecentArticle] = useState<ArticleProp[]>([]);
+
+  useEffect (() => {
+      try {
+        const getRecentArticles = async() => {
+          const results = await axios.get('http://localhost:3001/articles/desc')
+          setRecentArticle(results.data)  
+      }
+        getRecentArticles()
+        } catch(err) {
+        console.log(err)
+      }
+    }, [])
+
   return (
     <div className="mx-6 lg:mx-60">
       <header className="flex flex-col items-center my-10">
@@ -19,9 +45,11 @@ export default function Home() {
       <main className="flex flex-col items-center">
         <h1 className="text-2xl font-bold mb-10">Artigos Recentes</h1>
         <div className="grid md:grid-cols-2 gap-4">
-          <ArticlesCards src="https://cdn.pixabay.com/photo/2017/02/19/23/09/success-2081167_1280.jpg" alt="Em desenvolvimento" title="Em desenvolvimento" paragraph="Esse artigo está em desenvolvimento" />
-          <ArticlesCards src="https://cdn.pixabay.com/photo/2017/02/19/23/09/success-2081167_1280.jpg" alt="Em desenvolvimento" title="Em desenvolvimento" paragraph="Esse artigo está em desenvolvimento" />
-          <ArticlesCards src="https://cdn.pixabay.com/photo/2017/02/19/23/09/success-2081167_1280.jpg" alt="Em desenvolvimento" title="Em desenvolvimento" paragraph="Esse artigo está em desenvolvimento" />
+          {recentArticle.length > 0 && recentArticle.map((articles:ArticleProp) => (
+            <div key={articles.id}>
+              <ArticlesCards src={articles.imgUrl} alt={articles.slug} title={articles.title} paragraph={articles.description} slug={articles.slug} />
+            </div>
+          ))}
         </div>
       </main>
     </div>
