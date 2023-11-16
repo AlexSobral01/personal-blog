@@ -1,28 +1,20 @@
 /* eslint-disable react/jsx-key */
-import Link from "next/link";
+import Link from "next/link"
 
-export default function NavBar() {
-
+export default function DefaultMenu() {
   const menu = [
     { title: 'Home', url: '/' },
     { title: 'Artigos', url: '/articles' },
     { title: 'Sobre mim', url: '/aboutMe' },
     { title: 'Contato', url: '/contact' }
   ]
-
   return (
-    <nav className="flex justify-between items-center p-6 bg-gradient-to-r from-black to-slate-800 text-white">
-      <div>
-        <Link href={'/'}>
-          <h1 className="font-semibold">LOGO</h1>
-        </Link>
-      </div>
-      <ul className="flex gap-5">
-        {menu.map((items:any, index) => (
+    <ul className="hidden md:flex gap-5">
+        {menu.map((items:any) => (
           <li>
             <Link 
               href={items.url} 
-              key={index}
+              key={items.title}
               className="hover:text-gray-400 duration-300"
             >
               {items.title}
@@ -30,6 +22,5 @@ export default function NavBar() {
           </li>
         ))}
       </ul>
-    </nav>
   )
 }
