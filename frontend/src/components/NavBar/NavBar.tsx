@@ -22,8 +22,8 @@ export default function NavBar() {
     <>
       <nav className="flex justify-between items-center p-6 bg-gradient-to-r from-black to-slate-800 text-white">
         <div>
-          <Link href={'/'}>
-            <h1 className="font-bold hover:text-gray-200 duration-300">ALEX SOBRAL</h1>
+          <Link href={'/'} className="text-white hover:text-slate-400 duration-300">
+            <p className="font-bold hover:text-gray-200 h-6 duration-300">ALEX SOBRAL</p>
           </Link>
         </div>
         <DefaultMenu />

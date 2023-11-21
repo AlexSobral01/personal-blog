@@ -48,7 +48,6 @@ export default function CreateArticle() {
               placeholder="Escreva seu artigo"
               onChange={(desc) => {
                 setDescription(desc)
-                console.log(description)
               }} 
             />
           </div>
