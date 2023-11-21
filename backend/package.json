@@ -10,7 +10,8 @@
   "author": "alex_sobral",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "html-react-parser": "^5.0.6"
   },
   "devDependencies": {
     "body-parser": "^1.20.2",

@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import Parser from 'html-react-parser'
 
 import Link from "next/link"
 
@@ -18,7 +19,7 @@ export default function ArticlesCards({ src, alt, title, paragraph, slug }: Arti
           className="h-24 md:h-52 mx-auto rounded-xl my-2"
           />
           <h2 className="font-semibold text-xl md:text-2xl text-center my-2">{title}</h2>
-          <p className="mx-auto text-center text-gray-400 w-64 md:w-96 overflow-hidden text-ellipsis whitespace-nowrap">{paragraph}</p>
+          <p className="mx-auto text-center text-gray-400 w-64 md:w-96 overflow-hidden text-ellipsis whitespace-nowrap">{Parser(paragraph)}</p>
         </article>
       </Link>
   )

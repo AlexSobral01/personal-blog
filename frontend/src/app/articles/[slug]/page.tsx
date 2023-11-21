@@ -1,6 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 'use client'
 
+import Parser from 'html-react-parser';
+
 import axios from "axios"
 import { useState } from "react"
 
@@ -31,7 +33,7 @@ export default function page({ params }: { params: { slug: string } } ) {
             className="m-auto my-10 rounded"
           />
           <h1 className="text-3xl text-center my-5">{item.title}</h1>
-          <p className="mb-10">{item.description}</p>
+          <p className="mb-10">{Parser(item.description)}</p>
         </div>
       ))}
     </div>

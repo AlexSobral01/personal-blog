@@ -13,7 +13,6 @@ const getArticle = async() => {
   const response = await axios.get<Article[]>(
     'http://localhost:3001/articles'
   );
-  
   return response.data;
 };
 
