@@ -11,10 +11,9 @@ export default function DefaultMenu() {
   return (
     <ul className="hidden md:flex gap-5">
         {menu.map((items:any) => (
-          <li>
+          <li key={items.title}>
             <Link 
               href={items.url} 
-              key={items.title}
               className="hover:text-gray-400 duration-300"
             >
               {items.title}

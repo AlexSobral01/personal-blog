@@ -31,7 +31,7 @@ export default function NavBar() {
           <MenuHamburguer />
         </button>
       </nav>
-      <div className={isOpen? "absolute h-full w-full left-0 bg-gradient-to-r from-slate-900 to-slate-700 flex items-center justify-center duration-500": "duration-500 absolute h-full w-full bg-gradient-to-r from-slate-900 to-slate-700 -left-full items-center justify-center"}>
+      <div className={isOpen? "absolute h-full w-full left-0 bg-gradient-to-r from-slate-900 to-slate-700 flex items-center justify-center duration-500 z-10": "z-10 duration-500 absolute h-full w-full bg-gradient-to-r from-slate-900 to-slate-700 -left-full items-center justify-center"}>
         <ul className="h-full text-2xl flex flex-col items-center gap-10 border-b-1 mt-24">
           <li><Link href={'/'} className="hover:text-gray-400 duration-300">Home</Link></li>
           <li><Link href={'/articles'} className="hover:text-gray-400 duration-300">Artigos</Link></li>

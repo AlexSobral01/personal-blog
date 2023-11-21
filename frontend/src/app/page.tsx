@@ -3,6 +3,7 @@
 import ArticlesCards from "@/components/ArticlesCards";
 import axios from "axios";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 interface ArticleProp {
@@ -47,7 +48,7 @@ export default function Home() {
         <div className="grid md:grid-cols-2 gap-4">
           {recentArticle.length > 0 && recentArticle.map((articles:ArticleProp) => (
             <div key={articles.id}>
-              <ArticlesCards src={articles.imgUrl} alt={articles.slug} title={articles.title} paragraph={articles.description} slug={articles.slug} />
+              <ArticlesCards src={articles.imgUrl} alt={articles.slug} title={articles.title} paragraph={articles.description} slug={'/articles/' + articles.slug}  />
             </div>
           ))}
         </div>
