@@ -27,6 +27,7 @@ export default function CreateArticle() {
             placeholder="Url da imagem" 
             className="p-2 w-5/6 md:w-full m-auto rounded" 
             onChange={e => setImgUrl(e.target.value)}
+            required
           />
           <input 
             type="text" 
@@ -34,6 +35,7 @@ export default function CreateArticle() {
             placeholder="Título" 
             className="p-2 w-5/6 md:w-full m-auto rounded" 
             onChange={e => setTitle(e.target.value)}
+            required
           />
           <input 
             type="hidden" 

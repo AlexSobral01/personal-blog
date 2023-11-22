@@ -14,7 +14,7 @@ export default function DefaultMenu() {
           <li key={items.title}>
             <Link 
               href={items.url} 
-              className="hover:text-gray-400 duration-300"
+              className="text-slate-50 hover:text-gray-400 duration-300"
             >
               {items.title}
             </Link>

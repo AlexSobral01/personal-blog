@@ -27,3 +27,12 @@ h3 {
   font-size: 18px;
   padding: 2px 0px;
 }
+
+a {
+  color: rgb(120, 120, 248);
+  transition: 0.3s;
+}
+
+a:hover {
+  color: rgb(64, 64, 253);
+}
