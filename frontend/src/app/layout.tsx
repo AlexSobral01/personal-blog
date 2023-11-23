@@ -3,8 +3,11 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import NavBar from '@/components/NavBar/NavBar'
 import { AuthProvider } from '@/providers/auth-provider'
+import { useSession } from 'next-auth/react'
 
 const inter = Inter({ subsets: ['latin'] })
+
+// const {data:session} = useSession();
 
 export const metadata: Metadata = {
   title: 'Blog',

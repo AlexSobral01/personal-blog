@@ -19,8 +19,7 @@ export default function FormLogin() {
         redirect: false,
         email,
         password
-      })
-      console.log(response);
+      });
 
       if (!response?.error) {
         router.push('/admin')

@@ -30,7 +30,7 @@ export default function page({ params }: { params: { slug: string } } ) {
           <img 
             src={item.imgUrl} 
             alt={item.slug} 
-            className="m-auto my-10 rounded"
+            className="m-auto my-10 rounded max-h-52 md:max-h-80"
           />
           <h1 className="text-3xl text-center my-5">{item.title}</h1>
           <p className="mb-10">{Parser(item.description)}</p>

@@ -14,5 +14,5 @@ const callbackOptions = {}
 export default withAuth(middleware, callbackOptions)
 
 export const config = {
-  matcher: '/admin'
+  matcher: '/admin/:path*',
 }

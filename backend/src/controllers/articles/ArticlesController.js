@@ -4,7 +4,11 @@ const slugify = require('slugify');
 class ArticleController {
 
   async findAll (req, res) {
-    const artigos = await Article.findAll()
+    const artigos = await Article.findAll({
+      order: [
+        ['id', 'DESC']
+      ]
+    })
       res.send(artigos)
   }
 
